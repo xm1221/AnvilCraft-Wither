@@ -21,4 +21,14 @@ repositories {
             includeGroup "com.tterrag.registrate"
         }
     }
+    maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin") }
+    maven { url = uri("https://maven.aliyun.com/repository/public") }
+    maven{ url= uri("https://mvnrepository.com/artifact/") }
+    maven{ url =uri("https://mirrors.qlu.edu.cn/bmclapi") }
+    maven{url= uri("https://mirror.sjtu.edu.cn/")}
+    maven{url=uri("https://central.sonatype.com/artifact/")}
+    maven { url = uri("https://maven.architectury.dev/") }
+    maven { url = uri("https://maven.fabricmc.net/") }
+    maven { url = uri("https://maven.minecraftforge.net/") }
+    maven { url = uri("https://maven.blamejared.com/") }
 }
