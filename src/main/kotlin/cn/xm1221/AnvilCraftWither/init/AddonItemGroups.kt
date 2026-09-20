@@ -4,6 +4,7 @@ import cn.xm1221.AnvilCraftWither.AnvilCraftWither
 import dev.dubhe.anvilcraft.init.item.ModItemGroups
 import net.minecraft.core.registries.Registries
 import net.minecraft.world.item.CreativeModeTab
+import net.minecraft.world.item.Items
 import net.neoforged.bus.api.IEventBus
 import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
@@ -21,13 +22,13 @@ class AddonItemGroups {
                 "addon_items",
                 Supplier {
                     CreativeModeTab.builder()
-                        .icon { AddonItems.EXAMPLE_ITEM.asStack() }
+                        .icon { Items.WITHER_SKELETON_SKULL.defaultInstance }
                         .displayItems { _, _ -> }
                         .title(
                             AnvilCraftWither.REGISTRUM.addLang(
                                 "itemGroup",
                                 AnvilCraftWither.of("addon_items"),
-                                "AnvilCraft: Addon Template"
+                                "AnvilCraft Wither"
                             )
                         )
                         .withTabsBefore(ModItemGroups.ANVILCRAFT_BUILD_BLOCK.id)
