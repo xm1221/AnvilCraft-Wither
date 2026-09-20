@@ -1,10 +1,10 @@
-package dev.anvilcraft.addon.template
+package cn.xm1221.AnvilCraftWither
 
 import com.mojang.logging.LogUtils
-import dev.anvilcraft.addon.template.data.AddonDatagen
-import dev.anvilcraft.addon.template.init.AddonBlocks
-import dev.anvilcraft.addon.template.init.AddonItemGroups
-import dev.anvilcraft.addon.template.init.AddonItems
+import cn.xm1221.AnvilCraftWither.data.AddonDatagen
+import cn.xm1221.AnvilCraftWither.init.AddonBlocks
+import cn.xm1221.AnvilCraftWither.init.AddonItemGroups
+import cn.xm1221.AnvilCraftWither.init.AddonItems
 import dev.anvilcraft.lib.v2.config.ConfigManager
 import dev.anvilcraft.lib.v2.registrum.Registrum
 import net.minecraft.resources.ResourceLocation
@@ -14,10 +14,10 @@ import net.neoforged.fml.common.Mod
 import org.jetbrains.annotations.NotNull
 import org.slf4j.Logger
 
-@Mod(AnvilCraftAddonTemplate.MOD_ID)
-class AnvilCraftAddonTemplate(modEventBus: IEventBus, modContainer: ModContainer) {
+@Mod(AnvilCraftWither.MOD_ID)
+class AnvilCraftWither(modEventBus: IEventBus, modContainer: ModContainer) {
     companion object {
-        const val MOD_ID: String = "anvilcraft_addon_template"
+        const val MOD_ID: String = "anvilcraft_wither"
         val LOGGER: Logger = LogUtils.getLogger()
         val CONFIG: AddonConfig = ConfigManager.register(MOD_ID, ::AddonConfig)
         val REGISTRUM: Registrum = Registrum.create(MOD_ID)

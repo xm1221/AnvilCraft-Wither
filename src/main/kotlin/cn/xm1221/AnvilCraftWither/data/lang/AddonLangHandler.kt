@@ -1,6 +1,6 @@
-package dev.anvilcraft.addon.template.data.lang
+package cn.xm1221.AnvilCraftWither.data.lang
 
-import dev.anvilcraft.addon.template.AddonConfig
+import cn.xm1221.AnvilCraftWither.AddonConfig
 import dev.anvilcraft.lib.v2.config.ConfigData
 import dev.anvilcraft.lib.v2.registrum.providers.RegistrumLangProvider
 

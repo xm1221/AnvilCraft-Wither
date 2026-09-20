@@ -1,6 +1,6 @@
-package dev.anvilcraft.addon.template.init
+package cn.xm1221.AnvilCraftWither.init
 
-import dev.anvilcraft.addon.template.AnvilCraftAddonTemplate.Companion.REGISTRUM
+import cn.xm1221.AnvilCraftWither.AnvilCraftWither.Companion.REGISTRUM
 import dev.anvilcraft.lib.v2.registrum.util.entry.ItemEntry
 import net.minecraft.world.item.Item
 
