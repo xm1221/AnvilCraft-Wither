@@ -1,0 +1,11 @@
+{
+  "type": "anvilcraft_wither:wither_transformation",
+  "mode": "area",
+  "input": {
+    "blocks": ["minecraft:sand"]
+  },
+  "result": {
+    "block": "minecraft:sandstone"
+  },
+  "radius": 2
+}

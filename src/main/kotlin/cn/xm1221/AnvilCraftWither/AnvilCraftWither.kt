@@ -5,6 +5,7 @@ import cn.xm1221.AnvilCraftWither.data.AddonDatagen
 import cn.xm1221.AnvilCraftWither.init.AddonBlocks
 import cn.xm1221.AnvilCraftWither.init.AddonItemGroups
 import cn.xm1221.AnvilCraftWither.init.AddonItems
+import cn.xm1221.AnvilCraftWither.init.ModRecipeTypes
 import dev.anvilcraft.lib.v2.config.ConfigManager
 import dev.anvilcraft.lib.v2.registrum.Registrum
 import net.minecraft.resources.ResourceLocation
@@ -30,6 +31,7 @@ class AnvilCraftWither(modEventBus: IEventBus, modContainer: ModContainer) {
 
     init {
         AddonItemGroups.register(modEventBus)
+        ModRecipeTypes.register(modEventBus)
         AddonBlocks.register()
         AddonItems.register()
         AddonDatagen.init()
