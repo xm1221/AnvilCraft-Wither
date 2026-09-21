@@ -5,14 +5,14 @@
     "blocks": ["minecraft:gold_block"]
   },
   "layers": [
-    ["SSS", "SGS", "SSS"]
+    ["GGG", "GSG", "GGG"]
   ],
   "symbols": {
     "G": { "blocks": ["minecraft:gold_block"] },
-    "S": { "blocks": ["minecraft:grass"] }
+    "S": { "blocks": ["minecraft:grass_block"] }
   },
   "result": {
-    "block": "minecraft:obsidian"
+    "block": "minecraft:stone"
   },
   "structure_result": {
     "S": {

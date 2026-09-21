@@ -8,7 +8,7 @@ import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.data.event.GatherDataEvent
 
 @EventBusSubscriber(modid = AnvilCraftWither.MOD_ID)
-class AddonDatagen {
+class WitherDataGen {
     companion object {
         @SubscribeEvent
         @JvmStatic
