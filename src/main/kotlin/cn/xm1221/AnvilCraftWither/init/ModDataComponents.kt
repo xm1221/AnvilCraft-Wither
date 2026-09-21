@@ -2,6 +2,7 @@ package cn.xm1221.AnvilCraftWither.init
 
 import cn.xm1221.AnvilCraftWither.AnvilCraftWither
 import cn.xm1221.AnvilCraftWither.items.WitherStaffConfig
+import cn.xm1221.AnvilCraftWither.items.WitherStaffInteractionConfig
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.Registries
 import net.neoforged.bus.api.IEventBus
@@ -21,6 +22,18 @@ object ModDataComponents {
                 DataComponentType.builder<WitherStaffConfig>()
                     .persistent(WitherStaffConfig.CODEC)
                     .networkSynchronized(WitherStaffConfig.STREAM_CODEC)
+                    .build()
+            },
+        )
+
+    /** 凋灵法杖交互配置（时移 / 蓄力转化冷却与节奏） */
+    val WITHER_STAFF_INTERACTION: DeferredHolder<DataComponentType<*>, DataComponentType<WitherStaffInteractionConfig>> =
+        DATA_COMPONENT_TYPES.register(
+            "wither_staff_interaction",
+            Supplier {
+                DataComponentType.builder<WitherStaffInteractionConfig>()
+                    .persistent(WitherStaffInteractionConfig.CODEC)
+                    .networkSynchronized(WitherStaffInteractionConfig.STREAM_CODEC)
                     .build()
             },
         )

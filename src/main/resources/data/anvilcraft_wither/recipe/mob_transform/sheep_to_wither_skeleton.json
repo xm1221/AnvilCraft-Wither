@@ -1,0 +1,10 @@
+{
+  "type": "anvilcraft:mob_transform",
+  "input": "minecraft:sheep",
+  "results": [
+    {
+      "probability": 1.0,
+      "result_entity_type": "minecraft:wither_skeleton"
+    }
+  ]
+}

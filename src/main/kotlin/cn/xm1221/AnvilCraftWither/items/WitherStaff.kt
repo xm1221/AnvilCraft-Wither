@@ -51,6 +51,45 @@ data class WitherStaffConfig(
     }
 }
 
+/**
+ * 凋灵法杖的交互配置（Data Component）。
+ *
+ * 独立于发射配置，控制左键时移与 Shift+右键蓄力转化。
+ *
+ * @param timewarpCooldown 左键方块时移的冷却（tick）
+ * @param transformCooldown Shift+右键蓄力实体转化的冷却（tick）
+ * @param chargeDelay 蓄力转化前的按住时长（tick）
+ * @param chargeInterval 蓄力期间两次上报的间隔（tick）
+ */
+data class WitherStaffInteractionConfig(
+    val timewarpCooldown: Int = 60,
+    val transformCooldown: Int = 20,
+    val chargeDelay: Int = 10,
+    val chargeInterval: Int = 10,
+) {
+    companion object {
+        val CODEC: Codec<WitherStaffInteractionConfig> = RecordCodecBuilder.create { inst ->
+            inst.group(
+                Codec.INT.optionalFieldOf("timewarp_cooldown", 60).forGetter { it.timewarpCooldown },
+                Codec.INT.optionalFieldOf("transform_cooldown", 20).forGetter { it.transformCooldown },
+                Codec.INT.optionalFieldOf("charge_delay", 10).forGetter { it.chargeDelay },
+                Codec.INT.optionalFieldOf("charge_interval", 10).forGetter { it.chargeInterval },
+            ).apply(inst) { timewarpCooldown, transformCooldown, chargeDelay, chargeInterval ->
+                WitherStaffInteractionConfig(timewarpCooldown, transformCooldown, chargeDelay, chargeInterval)
+            }
+        }
+
+        val STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, WitherStaffInteractionConfig> = StreamCodec.composite(
+            ByteBufCodecs.INT, { it.timewarpCooldown },
+            ByteBufCodecs.INT, { it.transformCooldown },
+            ByteBufCodecs.INT, { it.chargeDelay },
+            ByteBufCodecs.INT, { it.chargeInterval },
+        ) { timewarpCooldown, transformCooldown, chargeDelay, chargeInterval ->
+            WitherStaffInteractionConfig(timewarpCooldown, transformCooldown, chargeDelay, chargeInterval)
+        }
+    }
+}
+
 class WitherStaff(properties: Properties) : Item(properties) {
 
     fun shot(world: ServerLevel, player: ServerPlayer, config: WitherStaffConfig) {
@@ -64,6 +103,8 @@ class WitherStaff(properties: Properties) : Item(properties) {
     }
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
+        // 潜行右键让给「实体蓄力转化」，不发射骷髅
+        if (player.isShiftKeyDown) return InteractionResultHolder.pass(player.getItemInHand(usedHand))
         if (level is ServerLevel) {
             val stack = player.getItemInHand(usedHand)
             val config = stack.get(ModDataComponents.WITHER_STAFF_CONFIG.get()) ?: WitherStaffConfig()

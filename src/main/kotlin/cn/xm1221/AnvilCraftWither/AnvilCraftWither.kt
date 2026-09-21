@@ -6,6 +6,7 @@ import cn.xm1221.AnvilCraftWither.init.AddonBlocks
 import cn.xm1221.AnvilCraftWither.init.AddonItemGroups
 import cn.xm1221.AnvilCraftWither.init.AddonItems
 import cn.xm1221.AnvilCraftWither.init.ModDataComponents
+import cn.xm1221.AnvilCraftWither.init.ModPayloads
 import cn.xm1221.AnvilCraftWither.init.ModRecipeTypes
 import dev.anvilcraft.lib.v2.config.ConfigManager
 import dev.anvilcraft.lib.v2.registrum.Registrum
@@ -34,6 +35,7 @@ class AnvilCraftWither(modEventBus: IEventBus, modContainer: ModContainer) {
         AddonItemGroups.register(modEventBus)
         ModRecipeTypes.register(modEventBus)
         ModDataComponents.register(modEventBus)
+        ModPayloads.register(modEventBus)
         AddonBlocks.register()
         AddonItems.register()
         WitherDataGen.init()
