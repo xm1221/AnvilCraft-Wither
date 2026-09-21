@@ -38,14 +38,16 @@ object WitherStaffInteractHandler {
     private fun interactionConfig(player: Player): WitherStaffInteractionConfig =
         player.mainHandItem.get(ModDataComponents.WITHER_STAFF_INTERACTION.get()) ?: WitherStaffInteractionConfig()
 
-    /** 方块时移：手持法杖左键始终取消挖掘，单击（Action.START）时尝试配方 */
+    /**
+     * 方块时移：左键方块时尝试配方。
+     * 不取消挖掘——物品 canAttackBlock=false 已保证方块不会被破坏，
+     * 客户端挖掘包照常发出，服务端事件得以触发。
+     */
     @SubscribeEvent
     @JvmStatic
     fun onLeftClickBlock(event: PlayerInteractEvent.LeftClickBlock) {
         val player: Player = event.entity
         if (!player.mainHandItem.`is`(AddonItems.WITHER_STAFF.asItem())) return
-        // 法杖左键不挖方块
-        event.setCanceled(true)
         if (event.action != PlayerInteractEvent.LeftClickBlock.Action.START) return
         val level = player.level()
         if (level !is ServerLevel) return

@@ -3,7 +3,9 @@ package cn.xm1221.AnvilCraftWither.items
 import cn.xm1221.AnvilCraftWither.init.ModDataComponents
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
+import net.minecraft.core.BlockPos
 import net.minecraft.network.RegistryFriendlyByteBuf
+import net.minecraft.network.chat.Component
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.server.level.ServerLevel
@@ -14,7 +16,9 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.entity.projectile.WitherSkull
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.state.BlockState
 
 /**
  * 凋灵法杖的行为配置（Data Component）。
@@ -112,5 +116,9 @@ class WitherStaff(properties: Properties) : Item(properties) {
             player.cooldowns.addCooldown(this, config.cooldown)
         }
         return InteractionResultHolder.sidedSuccess(player.getItemInHand(usedHand), level.isClientSide)
+    }
+
+    override fun canAttackBlock(state: BlockState, level: Level, pos: BlockPos, player: Player): Boolean {
+        return false
     }
 }
