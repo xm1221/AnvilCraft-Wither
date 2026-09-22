@@ -1,0 +1,13 @@
+{
+  "anvilcraft_wither.configuration.section.anvilcraft.wither.common.toml": "Anvilcraft Wither Common Configuration",
+  "anvilcraft_wither.configuration.section.anvilcraft.wither.common.toml.title": "Anvilcraft Wither Common Configuration",
+  "anvilcraft_wither.configuration.title": "Anvilcraft Wither Configuration",
+  "gui.anvilcraft_wither.category.wither_transformation": "Wither Transformation",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor": "Mode: Anchor (converts the hit block, explosion unchanged)",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor_no_explosion": "Mode: Anchor, no explosion (suppresses the explosion)",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.area": "Mode: Area (converts all matching blocks in range, explosion unchanged)",
+  "gui.anvilcraft_wither.category.wither_transformation.pattern": "Multiblock pattern (bottom to top, space = any)",
+  "gui.anvilcraft_wither.category.wither_transformation.radius": "Radius: %s",
+  "item.anvilcraft_wither.wither_staff": "Wither Staff",
+  "itemGroup.anvilcraft_wither.addon_items": "AnvilCraft Wither"
+}

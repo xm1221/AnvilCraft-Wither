@@ -2,6 +2,7 @@ package cn.xm1221.AnvilCraftWither.data
 
 import cn.xm1221.AnvilCraftWither.AnvilCraftWither
 import cn.xm1221.AnvilCraftWither.data.lang.AddonLangHandler
+import cn.xm1221.AnvilCraftWither.data.recipe.WitherTransformationRecipeHandler
 import dev.anvilcraft.lib.v2.registrum.providers.ProviderType
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
@@ -20,6 +21,7 @@ class WitherDataGen {
          */
         fun init() {
             AnvilCraftWither.REGISTRUM.addDataGenerator(ProviderType.LANG, AddonLangHandler::init)
+            AnvilCraftWither.REGISTRUM.addDataGenerator(ProviderType.RECIPE, WitherTransformationRecipeHandler::init)
         }
     }
 }

@@ -18,3 +18,9 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
 
 sourceSets.main.resources.srcDir generateModMetadata
 neoForge.ideSyncTask generateModMetadata
+
+// datagen 输出与手写资源重复时以手写（src/main/resources）为准，
+// 例如 Blockbench 3D 模型 wither_staff.json 不能被 Registrum 自动生成的 2D 模型覆盖。
+tasks.named("processResources").configure {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

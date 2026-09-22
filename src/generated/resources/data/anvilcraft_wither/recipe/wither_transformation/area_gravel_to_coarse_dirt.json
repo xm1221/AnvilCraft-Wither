@@ -1,0 +1,11 @@
+{
+  "type": "anvilcraft_wither:wither_transformation",
+  "input": {
+    "blocks": "minecraft:gravel"
+  },
+  "mode": "area",
+  "radius": 1,
+  "result": {
+    "block": "minecraft:coarse_dirt"
+  }
+}

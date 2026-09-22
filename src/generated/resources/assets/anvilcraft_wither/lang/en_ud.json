@@ -1,0 +1,13 @@
+{
+  "anvilcraft_wither.configuration.section.anvilcraft.wither.common.toml": "uoᴉʇɐɹnᵷᴉɟuoƆ uoɯɯoƆ ɹǝɥʇᴉM ʇɟɐɹɔꞁᴉʌuⱯ",
+  "anvilcraft_wither.configuration.section.anvilcraft.wither.common.toml.title": "uoᴉʇɐɹnᵷᴉɟuoƆ uoɯɯoƆ ɹǝɥʇᴉM ʇɟɐɹɔꞁᴉʌuⱯ",
+  "anvilcraft_wither.configuration.title": "uoᴉʇɐɹnᵷᴉɟuoƆ ɹǝɥʇᴉM ʇɟɐɹɔꞁᴉʌuⱯ",
+  "gui.anvilcraft_wither.category.wither_transformation": "uoᴉʇɐɯɹoɟsuɐɹ⟘ ɹǝɥʇᴉM",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor": "(pǝᵷuɐɥɔun uoᴉsoꞁdxǝ 'ʞɔoꞁq ʇᴉɥ ǝɥʇ sʇɹǝʌuoɔ) ɹoɥɔuⱯ :ǝpoW",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor_no_explosion": "(uoᴉsoꞁdxǝ ǝɥʇ sǝssǝɹddns) uoᴉsoꞁdxǝ ou 'ɹoɥɔuⱯ :ǝpoW",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.area": "(pǝᵷuɐɥɔun uoᴉsoꞁdxǝ 'ǝᵷuɐɹ uᴉ sʞɔoꞁq ᵷuᴉɥɔʇɐɯ ꞁꞁɐ sʇɹǝʌuoɔ) ɐǝɹⱯ :ǝpoW",
+  "gui.anvilcraft_wither.category.wither_transformation.pattern": "(ʎuɐ = ǝɔɐds 'doʇ oʇ ɯoʇʇoq) uɹǝʇʇɐd ʞɔoꞁqᴉʇꞁnW",
+  "gui.anvilcraft_wither.category.wither_transformation.radius": "%s :snᴉpɐᴚ",
+  "item.anvilcraft_wither.wither_staff": "ɟɟɐʇS ɹǝɥʇᴉM",
+  "itemGroup.anvilcraft_wither.addon_items": "ɹǝɥʇᴉM ʇɟɐɹƆꞁᴉʌuⱯ"
+}

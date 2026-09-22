@@ -1,0 +1,10 @@
+{
+  "type": "anvilcraft_wither:wither_transformation",
+  "input": {
+    "blocks": "minecraft:cobblestone"
+  },
+  "radius": 0,
+  "result": {
+    "block": "minecraft:crying_obsidian"
+  }
+}

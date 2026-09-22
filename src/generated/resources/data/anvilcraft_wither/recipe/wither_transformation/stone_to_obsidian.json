@@ -1,0 +1,10 @@
+{
+  "type": "anvilcraft_wither:wither_transformation",
+  "input": {
+    "blocks": "minecraft:stone"
+  },
+  "radius": 0,
+  "result": {
+    "block": "minecraft:obsidian"
+  }
+}

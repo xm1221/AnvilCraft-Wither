@@ -8,4 +8,10 @@ dependencies {
     // AnvilCraft
     implementation(libs.anvilcraft) { transitive = false }
     interfaceInjectionData(libs.anvilcraft) { transitive = false }
+
+    // JEI（编译期 + 开发运行期；发布 jar 不打包 JEI）
+    compileClasspath(libs.jei.common.api) { transitive = false }
+    compileClasspath(libs.jei.neoforge.api) { transitive = false }
+    compileClasspath(libs.jei.neoforge) { transitive = false }
+    runtimeClasspath(libs.jei.neoforge) { transitive = false }
 }

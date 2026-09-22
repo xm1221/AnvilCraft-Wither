@@ -1,0 +1,38 @@
+{
+  "type": "anvilcraft_wither:wither_transformation",
+  "input": {
+    "blocks": "minecraft:gold_block"
+  },
+  "mode": "anchor_no_explosion",
+  "pattern": {
+    "layers": [
+      [
+        "GSG",
+        "S S",
+        "GSG"
+      ],
+      [
+        "   ",
+        " G ",
+        "   "
+      ]
+    ],
+    "symbols": {
+      "G": {
+        "blocks": "minecraft:gold_block"
+      },
+      "S": {
+        "blocks": "minecraft:grass_block"
+      }
+    }
+  },
+  "radius": 0,
+  "result": {
+    "block": "minecraft:stone"
+  },
+  "structure_result": {
+    "S": {
+      "block": "minecraft:crying_obsidian"
+    }
+  }
+}
