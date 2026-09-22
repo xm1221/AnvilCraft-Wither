@@ -22,6 +22,8 @@ class WitherDataGen {
         fun init() {
             AnvilCraftWither.REGISTRUM.addDataGenerator(ProviderType.LANG, AddonLangHandler::init)
             AnvilCraftWither.REGISTRUM.addDataGenerator(ProviderType.RECIPE, WitherTransformationRecipeHandler::init)
+            // 物品标签（如 ItemTags.PIGLIN_LOVED）需显式挂载 item tags provider（block tags 会自动生成）
+            AnvilCraftWither.REGISTRUM.addDataGenerator(ProviderType.ITEM_TAGS) { _ -> }
         }
     }
 }

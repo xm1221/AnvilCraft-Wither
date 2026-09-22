@@ -31,7 +31,7 @@ class WitherTransformationCategory(private val helper: IGuiHelper) : IRecipeCate
     override fun getTitle(): Component =
         Component.translatable("gui.anvilcraft_wither.category.wither_transformation")
 
-    override fun getBackground(): IDrawable = background
+    //override fun getBackground(): IDrawable = background
 
     override fun getIcon(): IDrawable? = helper.createDrawableItemStack(ItemStack(Items.WITHER_SKELETON_SKULL))
 
@@ -52,7 +52,7 @@ class WitherTransformationCategory(private val helper: IGuiHelper) : IRecipeCate
             .addItemStack(recipe.output)
     }
 
-    override fun getTooltip(
+    /*override fun getTooltip(
         tooltip: ITooltipBuilder,
         recipe: WitherTransformationJeiRecipe,
         slotsView: IRecipeSlotsView,
@@ -85,7 +85,7 @@ class WitherTransformationCategory(private val helper: IGuiHelper) : IRecipeCate
                 tooltip.add(Component.literal(layer.joinToString("\n")).withStyle(ChatFormatting.DARK_GRAY))
             }
         }
-    }
+    }*/
 
     /** 静态背景：边框 + 凋灵之首图标 + 箭头 */
     private class WitherTransformationBackground(helper: IGuiHelper) : IDrawable {

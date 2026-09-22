@@ -4,6 +4,7 @@ import cn.xm1221.AnvilCraftWither.init.ModDataComponents
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.dubhe.anvilcraft.init.recipe.ModRecipeTypes
+import dev.dubhe.anvilcraft.item.abnormal.ICursed
 import dev.dubhe.anvilcraft.recipe.transform.MobTransformInput
 import dev.dubhe.anvilcraft.recipe.transform.MobTransformWithItemRecipe
 import net.minecraft.core.BlockPos
@@ -113,7 +114,16 @@ data class WitherStaffInteractionConfig(
     }
 }
 
-class WitherStaff(properties: Properties) : Item(properties) {
+class WitherStaff(properties: Properties) : Item(properties), ICursed {
+
+    /**
+     * 诅咒物品：携带时由 [ICursed] 施加异常效果（虚弱；数量多时追加缓慢 / 饥饿），
+     * 同时保留 [Item] 自身的背包 tick 逻辑。
+     */
+    override fun inventoryTick(stack: ItemStack, level: Level, entity: Entity, slotId: Int, isSelected: Boolean) {
+        super<Item>.inventoryTick(stack, level, entity, slotId, isSelected)
+        super<ICursed>.inventoryTick(stack, level, entity, slotId, isSelected)
+    }
 
     /** 近战属性（参考 AnvilHammerItem）：攻击伤害 +5，攻速 -3 */
     private val defaultModifiers: ItemAttributeModifiers = ItemAttributeModifiers.builder()

@@ -1,5 +1,8 @@
 {
-  "item.anvilcraft_wither.wither_staff": "凋灵法杖",
+  "item.anvilcraft_wither.wither_staff": "凋灵杖",
+  "block.anvilcraft_wither.cursed_gold_pressure_plate": "诅咒金压力板",
+  "block.anvilcraft_wither.wither_skull_resin_block": "凋灵骷髅树脂块",
+  "block.anvilcraft_wither.cursed_bar": "诅咒引雷针",
   "gui.anvilcraft_wither.category.wither_transformation": "凋灵转化",
   "gui.anvilcraft_wither.category.wither_transformation.mode.anchor": "模式：锚点转化（命中格转化，爆炸照常）",
   "gui.anvilcraft_wither.category.wither_transformation.mode.anchor_no_explosion": "模式：锚点安全转化（抑制爆炸）",

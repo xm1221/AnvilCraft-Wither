@@ -4,6 +4,7 @@ import cn.xm1221.AnvilCraftWither.AnvilCraftWither
 import cn.xm1221.AnvilCraftWither.init.ModDataComponents
 import cn.xm1221.AnvilCraftWither.init.ModPayloads
 import cn.xm1221.AnvilCraftWither.items.WitherStaffInteractionConfig
+import dev.anvilcraft.lib.v2.recipe.cache.BlockCache
 import dev.anvilcraft.lib.v2.util.predicate.ChanceItemStack
 import dev.dubhe.anvilcraft.block.entity.FishTankBlockEntity
 import dev.dubhe.anvilcraft.init.block.ModBlockEntities
@@ -81,12 +82,19 @@ object WitherStaffInteractHandler {
             AABB.ofSize(pos.center, 2.0, 2.0, 2.0),
         ).firstOrNull { it.isAlive && !it.item.isEmpty } ?: return false
         val input = itemEntity.item
+        val cache = BlockCache(level)
         for (holder in level.server.recipeManager.getAllRecipesFor(ModRecipeTypes.TIME_WARP_TYPE.get())) {
             val recipe = holder.value()
             if (recipe.inputItems.size != 1) continue
             if (!recipe.inputItems[0].test(input)) continue
+            // 锅/流体条件（含「要求空锅」与熔融宝石锅等专用锅的流体需求）
+            val hasCauldron = recipe.hasCauldron
+            if (!CauldronFluidSupport.matches(cache, pos, hasCauldron)) continue
             itemEntity.discard()
             dropTimewarpResults(level, pos, recipe.resultItems, input.count)
+            // 消耗 / 产出流体，并提交方块改动
+            CauldronFluidSupport.apply(cache, pos, hasCauldron, level.random)
+            cache.accept()
             level.levelEvent(2001, pos, Block.getId(level.getBlockState(pos)))
             level.playSound(null, pos, SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1.0f, 1.0f)
             stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack))
@@ -103,6 +111,7 @@ object WitherStaffInteractHandler {
         val tank = ModBlockEntities.FISH_TANK.get(level, pos).orElse(null) ?: return false
         // snapshot.2231+：具体输入处理器为 getInputHandler()（getInput() 返回 IItemHandler）
         val input = tank.inputHandler
+        val cache = BlockCache(level)
         for (slot in 0 until input.slots) {
             val slotStack = input.getStackInSlot(slot)
             if (slotStack.isEmpty) continue
@@ -110,6 +119,9 @@ object WitherStaffInteractHandler {
                 val recipe = holder.value()
                 if (recipe.inputItems.size != 1) continue
                 if (!recipe.inputItems[0].test(slotStack)) continue
+                // 鱼缸同样按配方的锅/流体条件判定（鱼缸自身即 IFluidHandlerHolder）
+                val hasCauldron = recipe.hasCauldron
+                if (!CauldronFluidSupport.matches(cache, pos, hasCauldron)) continue
                 val count = slotStack.count
                 input.extractItem(slot, count, false)
                 for (result in recipe.resultItems) {
@@ -123,6 +135,8 @@ object WitherStaffInteractHandler {
                         remaining -= n
                     }
                 }
+                CauldronFluidSupport.apply(cache, pos, hasCauldron, level.random)
+                cache.accept()
                 level.levelEvent(2001, pos, Block.getId(level.getBlockState(pos)))
                 level.playSound(null, pos, SoundEvents.BEACON_ACTIVATE, SoundSource.BLOCKS, 1.0f, 1.0f)
                 stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack))
