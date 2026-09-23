@@ -1,9 +1,9 @@
 {
   "type": "anvilcraft_wither:wither_transformation",
+  "dangerous": true,
   "input": {
     "blocks": "minecraft:obsidian"
   },
-  "mode": "anchor_no_explosion",
   "radius": 0,
   "result": {
     "block": "minecraft:crying_obsidian"

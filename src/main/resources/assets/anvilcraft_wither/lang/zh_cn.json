@@ -3,10 +3,10 @@
   "block.anvilcraft_wither.cursed_gold_pressure_plate": "诅咒金压力板",
   "block.anvilcraft_wither.wither_skull_resin_block": "凋灵骷髅树脂块",
   "block.anvilcraft_wither.cursed_bar": "诅咒引雷针",
-  "gui.anvilcraft_wither.category.wither_transformation": "凋灵转化",
-  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor": "模式：锚点转化（命中格转化，爆炸照常）",
-  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor_no_explosion": "模式：锚点安全转化（抑制爆炸）",
-  "gui.anvilcraft_wither.category.wither_transformation.mode.area": "模式：区域转化（命中点范围内全部匹配方块转化，爆炸照常）",
+  "gui.anvilcraft_wither.category.wither_transformation": "凋灵之首轰击",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor": "单方块转化",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.area": "范围转化",
   "gui.anvilcraft_wither.category.wither_transformation.radius": "半径：%s",
-  "gui.anvilcraft_wither.category.wither_transformation.pattern": "多方块结构（从下到上，空格=任意方块）"
+  "gui.anvilcraft_wither.category.wither_transformation.skull.normal": "需要凋灵之首",
+  "gui.anvilcraft_wither.category.wither_transformation.skull.dangerous": "需要蓝色凋灵之首"
 }

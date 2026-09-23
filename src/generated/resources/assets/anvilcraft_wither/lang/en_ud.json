@@ -5,12 +5,12 @@
   "block.anvilcraft_wither.cursed_bar": "ɹɐᗺ pǝsɹnƆ",
   "block.anvilcraft_wither.cursed_gold_pressure_plate": "ǝʇɐꞁԀ ǝɹnssǝɹԀ pꞁo⅁ pǝsɹnƆ",
   "block.anvilcraft_wither.wither_skull_resin_block": "ʞɔoꞁᗺ uᴉsǝᴚ ꞁꞁnʞS ɹǝɥʇᴉM",
-  "gui.anvilcraft_wither.category.wither_transformation": "uoᴉʇɐɯɹoɟsuɐɹ⟘ ɹǝɥʇᴉM",
-  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor": "(pǝᵷuɐɥɔun uoᴉsoꞁdxǝ 'ʞɔoꞁq ʇᴉɥ ǝɥʇ sʇɹǝʌuoɔ) ɹoɥɔuⱯ :ǝpoW",
-  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor_no_explosion": "(uoᴉsoꞁdxǝ ǝɥʇ sǝssǝɹddns) uoᴉsoꞁdxǝ ou 'ɹoɥɔuⱯ :ǝpoW",
-  "gui.anvilcraft_wither.category.wither_transformation.mode.area": "(pǝᵷuɐɥɔun uoᴉsoꞁdxǝ 'ǝᵷuɐɹ uᴉ sʞɔoꞁq ᵷuᴉɥɔʇɐɯ ꞁꞁɐ sʇɹǝʌuoɔ) ɐǝɹⱯ :ǝpoW",
-  "gui.anvilcraft_wither.category.wither_transformation.pattern": "(ʎuɐ = ǝɔɐds 'doʇ oʇ ɯoʇʇoq) uɹǝʇʇɐd ʞɔoꞁqᴉʇꞁnW",
+  "gui.anvilcraft_wither.category.wither_transformation": "ʇuǝɯpɹɐqɯoᗺ ꞁꞁnʞS ɹǝɥʇᴉM",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor": "ʞɔoꞁq ǝꞁᵷuᴉS",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.area": "ɐǝɹⱯ",
   "gui.anvilcraft_wither.category.wither_transformation.radius": "%s :snᴉpɐᴚ",
+  "gui.anvilcraft_wither.category.wither_transformation.skull.dangerous": "ꞁꞁnʞs ɹǝɥʇᴉʍ ǝnꞁq ɐ sǝɹᴉnbǝᴚ",
+  "gui.anvilcraft_wither.category.wither_transformation.skull.normal": "ꞁꞁnʞs ɹǝɥʇᴉʍ ɐ sǝɹᴉnbǝᴚ",
   "item.anvilcraft_wither.wither_staff": "ɟɟɐʇS ɹǝɥʇᴉM",
   "itemGroup.anvilcraft_wither.addon_items": "ɹǝɥʇᴉM ʇɟɐɹƆꞁᴉʌuⱯ"
 }

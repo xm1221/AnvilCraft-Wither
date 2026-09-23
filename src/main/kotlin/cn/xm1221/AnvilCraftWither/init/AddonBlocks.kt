@@ -2,14 +2,14 @@ package cn.xm1221.AnvilCraftWither.init
 
 import cn.xm1221.AnvilCraftWither.AnvilCraftWither
 import cn.xm1221.AnvilCraftWither.AnvilCraftWither.Companion.REGISTRUM
+import cn.xm1221.AnvilCraftWither.block.CursedGoldPressurePlateBlock
 import cn.xm1221.AnvilCraftWither.block.CursedLightningRodBlock
 import dev.anvilcraft.lib.v2.registrum.util.entry.BlockEntry
 import dev.dubhe.anvilcraft.block.item.CursedBlockItem
+import dev.dubhe.anvilcraft.block.plate.PowerLevelPressurePlateBlock
 import net.minecraft.tags.BlockTags
 import net.minecraft.tags.ItemTags
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.PressurePlateBlock
-import net.minecraft.world.level.block.state.properties.BlockSetType
 import net.minecraft.world.level.material.PushReaction
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel
 import net.neoforged.neoforge.client.model.generators.ModelFile
@@ -24,6 +24,9 @@ class AddonBlocks {
         /**
          * 诅咒金压力板。
          *
+         * 信号强度由踩踏范围内带物品栏生物的物品栏占用比例决定（见 [CursedGoldPressurePlateBlock]），
+         * 因此方块状态使用 AnvilCraft 可变信号压力板的 `power`(0~15) 而非原版 `powered`。
+         *
          * 纹理复用 AnvilCraft 的诅咒金块（anvilcraft:block/cursed_gold_block），
          * 方块模型使用原版父级模型 minecraft:block/pressure_plate_up / pressure_plate_down。
          *
@@ -32,10 +35,9 @@ class AddonBlocks {
          * 注意：模型与 blockstate 写在 src/main/resources（手写 JSON），
          * 因为 datagen 的 ExistingFileHelper 不含 AnvilCraft 资源包，跨 mod 纹理引用会校验失败。
          */
-        val CURSED_GOLD_PRESSURE_PLATE: BlockEntry<PressurePlateBlock> = REGISTRUM
+        val CURSED_GOLD_PRESSURE_PLATE: BlockEntry<CursedGoldPressurePlateBlock> = REGISTRUM
             .block("cursed_gold_pressure_plate") { properties ->
-                PressurePlateBlock(
-                    BlockSetType.GOLD,
+                CursedGoldPressurePlateBlock(
                     properties
                         .forceSolidOn()
                         .noCollission()
@@ -45,7 +47,7 @@ class AddonBlocks {
             }
             .tag(BlockTags.MINEABLE_WITH_PICKAXE, BlockTags.PRESSURE_PLATES)
             .blockstate { ctx, provider ->
-                // 引用手写模型生成 blockstate（避免默认 cube 模型 + 跨 mod 纹理校验失败）
+                // 引用手写模型生成 blockstate（power=0 用上抬模型，1~15 用下压模型）
                 val helper = provider.models().existingFileHelper
                 val up = ModelFile.ExistingModelFile(
                     AnvilCraftWither.of("block/cursed_gold_pressure_plate"),
@@ -57,7 +59,7 @@ class AddonBlocks {
                 )
                 provider.getVariantBuilder(ctx.get()).forAllStates { state ->
                     ConfiguredModel.builder()
-                        .modelFile(if (state.getValue(PressurePlateBlock.POWERED)) down else up)
+                        .modelFile(if (state.getValue(PowerLevelPressurePlateBlock.POWER) == 0) up else down)
                         .build()
                 }
             }

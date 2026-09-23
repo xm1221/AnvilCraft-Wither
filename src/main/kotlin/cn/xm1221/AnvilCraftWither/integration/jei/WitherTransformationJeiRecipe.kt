@@ -6,7 +6,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.crafting.RecipeHolder
 
 /**
- * 凋灵转化配方的 JEI 展示数据：从配方中提取代表方块与元信息。
+ * 凋灵之首轰击配方的 JEI 展示数据：从配方中提取代表方块与元信息。
  */
 class WitherTransformationJeiRecipe(
     val id: ResourceLocation,
@@ -14,6 +14,7 @@ class WitherTransformationJeiRecipe(
     val input: ItemStack,
     val output: ItemStack,
     val radius: Int,
+    val dangerous: Boolean,
     val recipe: WitherTransformationRecipe,
 ) {
     companion object {
@@ -28,6 +29,7 @@ class WitherTransformationJeiRecipe(
                 input = ItemStack(inputBlock),
                 output = ItemStack(outputBlock),
                 radius = r.radius,
+                dangerous = r.dangerous,
                 recipe = r,
             )
         }

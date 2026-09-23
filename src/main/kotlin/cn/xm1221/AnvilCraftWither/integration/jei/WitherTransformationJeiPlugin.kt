@@ -11,7 +11,6 @@ import mezz.jei.api.registration.IRecipeRegistration
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.item.Items
 
 /**
  * AnvilCraft-Wither 的 JEI 集成：注册凋灵转化配方类别。
@@ -46,7 +45,7 @@ class WitherTransformationJeiPlugin : IModPlugin {
     }
 
     override fun registerRecipeCatalysts(registration: IRecipeCatalystRegistration) {
-        registration.addRecipeCatalyst(ItemStack(Items.WITHER_SKELETON_SKULL), TYPE)
+        // 催化剂为凋灵杖（发射凋灵之首的来源）
         registration.addRecipeCatalyst(ItemStack(AddonItems.WITHER_STAFF.get()), TYPE)
     }
 }

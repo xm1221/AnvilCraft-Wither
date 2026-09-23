@@ -17,27 +17,27 @@ class AddonLangHandler {
             // JEI 类别
             provider.add(
                 "gui.anvilcraft_wither.category.wither_transformation",
-                "Wither Transformation",
+                "Wither Skull Bombardment",
             )
             provider.add(
                 "gui.anvilcraft_wither.category.wither_transformation.mode.anchor",
-                "Mode: Anchor (converts the hit block, explosion unchanged)",
-            )
-            provider.add(
-                "gui.anvilcraft_wither.category.wither_transformation.mode.anchor_no_explosion",
-                "Mode: Anchor, no explosion (suppresses the explosion)",
+                "Single block",
             )
             provider.add(
                 "gui.anvilcraft_wither.category.wither_transformation.mode.area",
-                "Mode: Area (converts all matching blocks in range, explosion unchanged)",
+                "Area",
             )
             provider.add(
                 "gui.anvilcraft_wither.category.wither_transformation.radius",
                 "Radius: %s",
             )
             provider.add(
-                "gui.anvilcraft_wither.category.wither_transformation.pattern",
-                "Multiblock pattern (bottom to top, space = any)",
+                "gui.anvilcraft_wither.category.wither_transformation.skull.normal",
+                "Requires a wither skull",
+            )
+            provider.add(
+                "gui.anvilcraft_wither.category.wither_transformation.skull.dangerous",
+                "Requires a blue wither skull",
             )
         }
     }

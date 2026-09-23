@@ -5,12 +5,12 @@
   "block.anvilcraft_wither.cursed_bar": "Cursed Bar",
   "block.anvilcraft_wither.cursed_gold_pressure_plate": "Cursed Gold Pressure Plate",
   "block.anvilcraft_wither.wither_skull_resin_block": "Wither Skull Resin Block",
-  "gui.anvilcraft_wither.category.wither_transformation": "Wither Transformation",
-  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor": "Mode: Anchor (converts the hit block, explosion unchanged)",
-  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor_no_explosion": "Mode: Anchor, no explosion (suppresses the explosion)",
-  "gui.anvilcraft_wither.category.wither_transformation.mode.area": "Mode: Area (converts all matching blocks in range, explosion unchanged)",
-  "gui.anvilcraft_wither.category.wither_transformation.pattern": "Multiblock pattern (bottom to top, space = any)",
+  "gui.anvilcraft_wither.category.wither_transformation": "Wither Skull Bombardment",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.anchor": "Single block",
+  "gui.anvilcraft_wither.category.wither_transformation.mode.area": "Area",
   "gui.anvilcraft_wither.category.wither_transformation.radius": "Radius: %s",
+  "gui.anvilcraft_wither.category.wither_transformation.skull.dangerous": "Requires a blue wither skull",
+  "gui.anvilcraft_wither.category.wither_transformation.skull.normal": "Requires a wither skull",
   "item.anvilcraft_wither.wither_staff": "Wither Staff",
   "itemGroup.anvilcraft_wither.addon_items": "AnvilCraft Wither"
 }
