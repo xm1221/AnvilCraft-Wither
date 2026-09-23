@@ -26,7 +26,7 @@ import net.neoforged.fml.common.EventBusSubscriber
 @EventBusSubscriber(modid = AnvilCraftWither.MOD_ID)
 object CursedLightningRodHandler {
     /** 引雷针每次被雷击注入的电荷量（对齐 AnvilCraft 铜块 / 避雷针的数值） */
-    private const val CHARGE_PER_STRIKE = 80.0
+    private const val CHARGE_PER_STRIKE = 160.0
 
     @SubscribeEvent
     @JvmStatic

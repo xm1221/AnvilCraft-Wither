@@ -31,7 +31,7 @@ import kotlin.math.ceil
 class CursedLightningRodBlock(properties: Properties) : Block(properties) {
     companion object {
         /** 与模型 x/z 6.5~9.5 对应的中心立柱碰撞箱 */
-        private val SHAPE: VoxelShape = Block.box(6.0, 0.0, 6.0, 10.0, 16.0, 10.0)
+        private val SHAPE: VoxelShape = Block.box(6.0, 0.0, 6.0, 10.0, 18.0, 10.0)
 
         /** 不满足引雷条件时的重查间隔（tick） */
         private const val RECHECK_INTERVAL = 20
